@@ -54,7 +54,7 @@ export default {
       return this.getPageCount(this.total, this.pageSize)
     },
     numList () {
-      const len = this.pageCount > this.pagerCount ? this.pagerCount - 2 : this.pagerCount
+      const len = this.pagerCount - 2
       const rest = []
       for (let index = 0; index < len; index++) {
         rest.push(index)
@@ -278,7 +278,7 @@ export default {
     renderPageBtn (h, showJump) {
       const { numList, currentPage, pageCount, pagerCount, offsetNumber } = this
       const nums = []
-      const isOv = pageCount > pagerCount
+      const isOv = true
       const isLt = isOv && currentPage > offsetNumber + 1
       const isGt = isOv && currentPage < pageCount - offsetNumber
       let startNumber = 1
